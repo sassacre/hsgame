@@ -1,0 +1,183 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/enemy.png" type="Texture" id=2]
+[ext_resource path="res://sprites/robot.png" type="Texture" id=3]
+[ext_resource path="res://sprites/john.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bg.png" type="Texture" id=5]
+[ext_resource path="res://sprites/cal.png" type="Texture" id=6]
+[ext_resource path="res://sprites/rose.png" type="Texture" id=7]
+[ext_resource path="res://Enemy.gd" type="Script" id=8]
+[ext_resource path="res://sprites/wolf.png" type="Texture" id=9]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 21.622
+height = 64.0011
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 12.1712
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 24.3976
+height = 44.8633
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 62.0765
+height = 98.2224
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 89.0424
+height = 113.911
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 78.9257
+height = 144.016
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 56.1494
+height = 75.2635
+
+[node name="Node" type="Node"]
+
+[node name="background" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background"]
+visible = false
+polygon = PoolVector2Array( -708.317, 243.038, 193.102, 233.525, 292.996, 83.6847, 1104.03, 95.5768, 1101.66, -453.837, -710.695, -458.594 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="background"]
+visible = false
+polygon = PoolVector2Array( 1099.28, -456.215, 1096.9, 804.344, -708.317, 809.101, -708.317, -472.864, -798.696, -472.864, -791.561, 901.859, 1201.55, 906.616, 1184.9, -458.594 )
+
+[node name="bg3" type="Sprite" parent="background"]
+position = Vector2( 197.013, 175.067 )
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 5 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 339.049, 464.524 )
+
+[node name="enemy" type="StaticBody2D" parent="YSort"]
+position = Vector2( 750.297, 375.669 )
+scale = Vector2( 2.75, 2.75 )
+script = ExtResource( 8 )
+
+[node name="enemy" type="Sprite" parent="YSort/enemy"]
+texture = ExtResource( 2 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/enemy/hurtbox"]
+position = Vector2( -2.59457, 3.45955 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/enemy"]
+position = Vector2( -8.09042, 48.7353 )
+shape = SubResource( 3 )
+
+[node name="robot" type="StaticBody2D" parent="YSort"]
+position = Vector2( 496.665, 122.956 )
+script = ExtResource( 8 )
+
+[node name="robot" type="Sprite" parent="YSort/robot"]
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 3 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/robot"]
+position = Vector2( 0.117188, 0.579071 )
+scale = Vector2( 2.75, 2.75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/robot/hurtbox"]
+position = Vector2( -0.130959, -0.294388 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/robot"]
+position = Vector2( -7.74719, 76.7205 )
+scale = Vector2( 2.75, 2.75 )
+shape = SubResource( 3 )
+
+[node name="john" type="StaticBody2D" parent="YSort"]
+position = Vector2( 11.9235, 359.188 )
+script = ExtResource( 8 )
+
+[node name="john" type="Sprite" parent="YSort/john"]
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 4 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/john"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/john/hurtbox"]
+position = Vector2( 40, 4 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/john"]
+position = Vector2( 30.2355, 83.0645 )
+scale = Vector2( 2.75, 2.75 )
+shape = SubResource( 3 )
+
+[node name="cal" type="StaticBody2D" parent="YSort"]
+position = Vector2( -336.737, 632.407 )
+script = ExtResource( 8 )
+
+[node name="cal" type="Sprite" parent="YSort/cal"]
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 6 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/cal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/cal/hurtbox"]
+position = Vector2( -3.3674, -22.4493 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/cal"]
+position = Vector2( -2.99054, 90.0285 )
+scale = Vector2( 2.75, 2.75 )
+shape = SubResource( 3 )
+
+[node name="rose" type="StaticBody2D" parent="YSort"]
+position = Vector2( -565.606, 390.575 )
+script = ExtResource( 8 )
+
+[node name="rose" type="Sprite" parent="YSort/rose"]
+position = Vector2( -19.6431, -12.347 )
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 7 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/rose"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/rose/hurtbox"]
+position = Vector2( -57.9564, -55.4365 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/rose"]
+position = Vector2( -68.9423, 58.4581 )
+scale = Vector2( 2.75, 2.75 )
+shape = SubResource( 3 )
+
+[node name="wolf" type="StaticBody2D" parent="YSort"]
+position = Vector2( 987.736, 700.262 )
+script = ExtResource( 8 )
+
+[node name="wolf" type="Sprite" parent="YSort/wolf"]
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 9 )
+
+[node name="hurtbox" type="Area2D" parent="YSort/wolf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/wolf/hurtbox"]
+position = Vector2( 13.859, 30.2381 )
+rotation = -1.57079
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/wolf"]
+position = Vector2( 61.5913, 66.536 )
+scale = Vector2( 2.75, 2.75 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="YSort/enemy/hurtbox" to="YSort/enemy" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="YSort/robot/hurtbox" to="YSort/robot" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="YSort/john/hurtbox" to="YSort/john" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="YSort/cal/hurtbox" to="YSort/cal" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="YSort/rose/hurtbox" to="YSort/rose" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="YSort/wolf/hurtbox" to="YSort/wolf" method="_on_hurtbox_area_entered"]

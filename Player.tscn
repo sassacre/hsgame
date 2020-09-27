@@ -1,0 +1,435 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://sprites/Dave_homosuck.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://sprites/sword.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 21.2892
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 60.3677
+height = 104.179
+
+[sub_resource type="Animation" id=3]
+resource_name = "flip_lr"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "flip_rl"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.2
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "flip_lr"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "flip_lr"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "flip_rl"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "flip_rl"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=29]
+states/flip_lr/node = SubResource( 10 )
+states/flip_lr/position = Vector2( 337, 163 )
+"states/flip_lr 2/node" = SubResource( 9 )
+"states/flip_lr 2/position" = Vector2( 337, 233 )
+states/flip_rl/node = SubResource( 12 )
+states/flip_rl/position = Vector2( 578, 163 )
+"states/flip_rl 2/node" = SubResource( 11 )
+"states/flip_rl 2/position" = Vector2( 578, 238 )
+states/idle_left/node = SubResource( 13 )
+states/idle_left/position = Vector2( 215, 55 )
+states/idle_right/node = SubResource( 14 )
+states/idle_right/position = Vector2( 654, 55 )
+states/walk_left/node = SubResource( 15 )
+states/walk_left/position = Vector2( 84, 295 )
+states/walk_right/node = SubResource( 16 )
+states/walk_right/position = Vector2( 774, 300 )
+transitions = [ "idle_left", "flip_lr", SubResource( 17 ), "flip_lr", "idle_right", SubResource( 18 ), "idle_right", "flip_rl", SubResource( 19 ), "flip_rl", "idle_left", SubResource( 20 ), "idle_left", "walk_left", SubResource( 21 ), "idle_right", "walk_right", SubResource( 22 ), "walk_left", "idle_left", SubResource( 23 ), "walk_right", "idle_right", SubResource( 24 ), "walk_left", "flip_lr 2", SubResource( 25 ), "flip_lr 2", "walk_right", SubResource( 26 ), "walk_right", "flip_rl 2", SubResource( 27 ), "flip_rl 2", "walk_left", SubResource( 28 ) ]
+start_node = "idle_right"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=30]
+
+[sub_resource type="Animation" id=31]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite/sword:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -36.7746, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite/sword:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -11.0896, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimatedSprite/sword:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "swing"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite/sword:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -37.1321, -0.25, 0, 0.25, 0, -34.648, -0.25, 0, 0.25, 0, -37.1321, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite/sword:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -10.6906, -0.25, 0, 0.25, 0, -13.4625, -0.25, 0, 0.25, 0, -10.6906, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimatedSprite/sword:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.070835, -27.077, -173.5, -0.017403, 36.7008, 0.0841711, 22.1175, 0, -0.0166598, -85.8547, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2 )
+}
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=37]
+states/idle/node = SubResource( 33 )
+states/idle/position = Vector2( 202, 100 )
+states/swing/node = SubResource( 34 )
+states/swing/position = Vector2( 215, 252 )
+transitions = [ "idle", "swing", SubResource( 35 ), "swing", "idle", SubResource( 36 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=38]
+
+[sub_resource type="CircleShape2D" id=39]
+radius = 35.7194
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -697
+limit_top = -500
+limit_right = 1091
+limit_bottom = 796
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="AnimatedSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="sword" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( -36.7746, -11.0896 )
+texture = ExtResource( 4 )
+offset = Vector2( 34.9832, 57.8208 )
+
+[node name="player_sword_area" type="Area2D" parent="AnimatedSprite/sword"]
+position = Vector2( 36.7746, 11.0896 )
+
+[node name="sword_shape" type="CollisionShape2D" parent="AnimatedSprite/sword/player_sword_area"]
+position = Vector2( 74.5877, 98.9364 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource( 2 )
+
+[node name="body_anims" type="AnimationPlayer" parent="."]
+anims/flip_lr = SubResource( 3 )
+anims/flip_rl = SubResource( 4 )
+anims/idle_left = SubResource( 5 )
+anims/idle_right = SubResource( 6 )
+anims/walk_left = SubResource( 7 )
+anims/walk_right = SubResource( 8 )
+
+[node name="body_anim_tree" type="AnimationTree" parent="."]
+tree_root = SubResource( 29 )
+anim_player = NodePath("../body_anims")
+active = true
+parameters/playback = SubResource( 30 )
+
+[node name="sword_anims" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 31 )
+anims/swing = SubResource( 32 )
+
+[node name="sword_anim_tree" type="AnimationTree" parent="."]
+tree_root = SubResource( 37 )
+anim_player = NodePath("../sword_anims")
+active = true
+parameters/playback = SubResource( 38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.33636, 103.79 )
+rotation = -1.5708
+shape = SubResource( 39 )
